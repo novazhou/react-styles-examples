@@ -8,7 +8,7 @@ const TodoFooter = () => {
 	const dispatch = useDispatch()
 	const todoState = useSelector(todoSelector)
 	const todos = todoState.todos
-	const todoCount = todos.length
+	const todoCount = todos.filter((todo) => todo.completed !== true).length
 
 	const handleClear = () => {
 		dispatch(clearTodosAction())

@@ -11,9 +11,8 @@ const TodoHeader = () => {
 	const [todoLabel, setTodoLabel] = useState<string>("")
 	const dispatch = useDispatch()
 
-	const handleChange = (event: any) => {
-		const value = event.target.value
-		setTodoLabel(value)
+	const handleChange = (event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, value?: string) => {
+		value && setTodoLabel(value)
 	}
 
 	const handleAdd = async () => {
@@ -35,7 +34,7 @@ const TodoHeader = () => {
 			}
 			dispatch(setFilterAction(payload))
 		}
-	  };
+	  }
 
 	return (
 		<Stack tokens={todoHeaderStackTokens}>
