@@ -12,7 +12,7 @@ const TodoHeader = () => {
 	const dispatch = useDispatch()
 
 	const handleChange = (event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, value?: string) => {
-		value && setTodoLabel(value)
+		value ? setTodoLabel(value) : setTodoLabel("")
 	}
 
 	const handleAdd = async () => {

@@ -1,4 +1,4 @@
-import { GET_TODOS, GET_TODOS_ASYNC, ADD_TODO_ASYNC, ADD_TODO, CLEAR, SET_FILTER, TOGGLE_COMPLETE_ASYNC, TOGGLE_COMPLETE, REMOVE_ASYNC, REMOVE, TodosActionTypes } from './types'
+import { GET_TODOS, GET_TODOS_ASYNC, ADD_TODO_ASYNC, ADD_TODO, CLEAR_ASYNC, CLEAR, SET_FILTER, TOGGLE_COMPLETE_ASYNC, TOGGLE_COMPLETE, REMOVE_ASYNC, REMOVE, TodosActionTypes } from './types'
 import { FilterTypes, Todo } from '../../types'
 
 export const getTodosAsyncAction = () => {
@@ -100,6 +100,12 @@ export const removeAction = (payload: IRemoveActionPayload): TodosActionTypes =>
 	return {
 		type: REMOVE,
 		id
+	}
+}
+
+export const clearTodoAsyncAction = (): TodosActionTypes => {
+	return {
+		type: CLEAR_ASYNC
 	}
 }
 

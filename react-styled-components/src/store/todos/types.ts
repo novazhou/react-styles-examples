@@ -4,6 +4,7 @@ export const GET_TODOS = 'GET_TODOS'
 export const GET_TODOS_ASYNC = 'GET_TODOS_ASYNC'
 export const ADD_TODO = 'ADD_TODO'
 export const ADD_TODO_ASYNC = 'ADD_TODO_ASYNC'
+export const CLEAR_ASYNC = 'CLEAR_ASYNC'
 export const CLEAR = 'CLEAR'
 export const SET_FILTER = 'SET_FILTER'
 export const TOGGLE_COMPLETE = 'TOGGLE_COMPLETE'
@@ -28,6 +29,10 @@ export interface IAddTodoAsyncAction {
 interface IAddTodoAction {
 	type: typeof ADD_TODO
 	todo: Todo
+}
+
+interface IClearAsyncAction {
+	type: typeof CLEAR_ASYNC
 }
 
 interface IClearAction {
@@ -60,4 +65,4 @@ export interface IRemoveAsyncAction {
 	id: string
 }
 
-export type TodosActionTypes = IGetTodosAsyncAction | IGetTodosAction | IAddTodoAsyncAction | IAddTodoAction | IClearAction | ISetFilterAction | IToggleCompleteAsyncAction | IToggleCompleteAtion | IRemoveAction | IRemoveAsyncAction
+export type TodosActionTypes = IGetTodosAsyncAction | IGetTodosAction | IAddTodoAsyncAction | IAddTodoAction | IClearAction | ISetFilterAction | IToggleCompleteAsyncAction | IToggleCompleteAtion | IRemoveAction | IRemoveAsyncAction | IClearAsyncAction

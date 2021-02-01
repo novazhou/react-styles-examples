@@ -42,7 +42,10 @@ const reducer = (state = todoInitialState, action: TodosActionTypes): ITodosStat
 			}	
 		case CLEAR:
 			return {
-				...todoInitialState
+				...state,
+				todos: state.todos.filter((todo) => {
+					return todo.completed !== true
+				})
 			}
 		default:
 			return state		

@@ -1,7 +1,7 @@
 import React from 'react'
 import { DefaultButton, Stack, Text } from '@fluentui/react'
 import { useDispatch, useSelector } from 'react-redux'
-import { clearTodosAction } from '../store/todos/actions'
+import { clearTodoAsyncAction } from '../store/todos/actions'
 import { todoSelector } from '../store/todos/selector'
 
 const TodoFooter = () => {
@@ -11,7 +11,7 @@ const TodoFooter = () => {
 	const todoCount = todos.filter((todo) => todo.completed !== true).length
 
 	const handleClear = () => {
-		dispatch(clearTodosAction())
+		dispatch(clearTodoAsyncAction())
 	}
 
 	return (

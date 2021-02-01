@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useDispatch, useSelector } from 'react-redux'
-import { clearTodosAction } from '../store/todos/actions'
+import { clearTodoAsyncAction } from '../store/todos/actions'
 import { todoSelector } from '../store/todos/selector'
 
 const TodoForm = styled.div`
@@ -38,7 +38,7 @@ const TodoFooter = () => {
 	const todoCount = todos.filter((todo) => todo.completed !== true).length
 
 	const handleClear = () => {
-		dispatch(clearTodosAction())
+		dispatch(clearTodoAsyncAction())
 	}
 
 	return (
